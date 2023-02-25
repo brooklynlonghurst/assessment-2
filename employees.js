@@ -68,11 +68,9 @@ console.log(empOne.getSchedule())
 */
 
 //CODE HERE
-let empTwo = {...empOne}
+let empTwo = {...empOne, name: "Nick"}
 
-let newName = empTwo['Nick']
-
-console.log(newName)
+console.log(empTwo)
 
 
 //////////////////PROBLEM 2////////////////////
@@ -102,13 +100,13 @@ console.log(newName)
 class Manager extends Employee {
     constructor(name, shifts, employees){
         super(name, shifts)
-            this.employees = []
+            this.employees = [employees]
     }
     getEmployees(){
         console.log(`${this.name} manages ${this.employees}`)
     }
     addEmployee(emp){
-
+        this.employees.push("Josh")
     }
 }
 
@@ -127,7 +125,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-
+let manager = new Manager("Winston", "weekday mornings, weekday afternoons", "Cece and Schmidt")
 
 /*
     Call the `getEmployees` method on the
@@ -135,7 +133,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE
-
+manager.getEmployees()
 /*
     Call the `addEmployee` method on the 
     `manager` object passing in the string 
@@ -143,7 +141,7 @@ class Manager extends Employee {
 */
 
 //CODE HERE 
-
+manager.addEmployee("Coach")
 /*
     Call the `getEmployees` method on the
     `manager` object again to confirm 
@@ -151,3 +149,5 @@ class Manager extends Employee {
 */
 
 //CODE HERE
+
+manager.getEmployees()

@@ -98,19 +98,44 @@ console.log(category)
 //CODE HERE
  let foodArr = [
     {
-        price: 10
+        name: "Hawaiian",
+        price: 10,
+        category: "entree",
+        popularity: 10,
+        rating: 2,
+        tags: "gluten-free"
     },
     {
-        popularity: 8
+        name: "Pepperoni",
+        price: 8,
+        category: "entree",
+        popularity: 9,
+        rating: 4,
+        tags: "meat-lover"
     },
     {
-        rating: 5
+        name: "Cheese",
+        price: 6,
+        category: "entree",
+        popularity: 7,
+        rating: 5,
+        tags: "kids"
     },
     {
-        tags: 'kids'
+        name: "BBQ Chicken",
+        price: 12,
+        category: "entree",
+        popularity: 7,
+        rating: 3,
+        tags: "gluten-free"
     },
     {
-        toppings: 'ham'
+        name: "Veggie",
+        price: 12,
+        category: "entree",
+        popularity: 3,
+        rating: 1,
+        tags: "gluten-free"
     }
  ]
 
@@ -129,8 +154,9 @@ console.log(category)
 
 //CODE HERE
 
-const filteredFood = foodArr.filter()
-
+const filteredFood = foodArr.filter(function(callback){
+    return callback.tags.includes('tags')
+})
 
 
 //////////////////PROBLEM 5////////////////////
@@ -173,8 +199,18 @@ const filteredFood = foodArr.filter()
 */
 
 //CODE HERE
-function filterByProperty(property, number, type){
-    
+function filterByProperty(property, number, type) {
+    let filteredArr = []
+    if(type === "above"){
+         filteredArr = foodArr.filter(function(food){
+            return food[property] > number
+         })
+    } else if(type === "below"){
+        filteredArr = foodArr.filter(function(food){
+            return food[property] < number
+        })
+    }
+    return filteredArr
 }
 
 /*
@@ -185,3 +221,6 @@ function filterByProperty(property, number, type){
 */
 
 //CODE HERE
+
+
+console.log(filterByProperty('price', 10, 'above'))
