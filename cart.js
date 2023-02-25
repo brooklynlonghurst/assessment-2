@@ -106,10 +106,10 @@ console.log(calcFinalPrice(100, .25, .06))
 //CODE HERE
 
 const customer = {
-    foodType: ('American'), ('Chinese'), ('Indian')
-    menuItem: ('hamburger & fries'), ('fried rice & orange chicken'), ('chicken tikka masala')
-    allergies: false
-    peopleInParty: 4
+    foodType: 'American',
+    menuItem: 'hamburger & fries',
+    allergies: false,
+    peopleInParty: 4,
 }
 
 console.log(customer)
